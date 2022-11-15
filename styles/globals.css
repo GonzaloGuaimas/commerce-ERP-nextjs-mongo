@@ -1,3 +1,8 @@
+:root {
+  --red-color: rgb(199, 16, 16);
+  --grey-color: rgb(192, 191, 191);
+  --grey-dark-color: rgb(119, 119, 119);
+}
 html,
 body {
   padding: 0;
@@ -25,7 +30,18 @@ a {
   }
 }
 
+/*----------------------------------------------------*/
 .navBar {
   padding: 0rem !important;
-  border-bottom: 2px solid red !important
+  border-bottom: 2px solid var(--red-color) !important
+}
+.p-tabview .p-tabview-nav{
+  background: var(--grey-dark-color) !important;
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link{
+  background: var(--grey-dark-color) !important;
+  color: white !important
+}
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  background: var(--grey-color) !important;
 }
