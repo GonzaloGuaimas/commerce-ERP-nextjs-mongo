@@ -24,6 +24,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
         "react/jsx-filename-extensions": [
             0,
             { "extensions": [".js",".jsx",".tsx",".ts"]}
