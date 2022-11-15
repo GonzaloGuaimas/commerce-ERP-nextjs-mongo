@@ -24,3 +24,8 @@ a {
     background: rgb(255, 255, 255);
   }
 }
+
+.navBar {
+  padding: 0rem !important;
+  border-bottom: 2px solid red !important
+}
