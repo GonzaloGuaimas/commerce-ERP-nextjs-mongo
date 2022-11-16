@@ -1,9 +1,54 @@
 import Head from 'next/head'
+import { Button } from 'primereact/button'
 import { Panel } from 'primereact/panel'
 import { TabPanel, TabView } from 'primereact/tabview'
 import { SidePanelProduct } from '../components/products/SidePanelProduct'
+import { TableProducts } from '../components/products/TableProducts'
 
 export default function Products () {
+  const data = [{
+    code: 'as12',
+    name: 'asd',
+    description: 'asddas',
+    price: 1200
+  },
+  {
+    code: 'aqwesa32',
+    name: 'juann',
+    description: 'asddas',
+    price: 1200
+  },
+  {
+    code: 'as12543',
+    name: 'patoo',
+    description: 'asddas',
+    price: 1200
+  },
+  {
+    code: 'as12',
+    name: 'asd',
+    description: 'asddas',
+    price: 1200
+  },
+  {
+    code: 'aqwesa32',
+    name: 'juann',
+    description: 'asddas',
+    price: 1200
+  },
+  {
+    code: 'as12543',
+    name: 'patoo',
+    description: 'asddas',
+    price: 1200
+  }
+  ]
+  const PanelHeader = (
+    <div className='main-panel-header'>
+      <span className='p-panel-title' style={{ flex: '1rem' }}>Articulos</span>
+      <Button label="Nuevo Articulo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
+    </div>
+  )
   return (
     <div>
       <Head>
@@ -14,8 +59,8 @@ export default function Products () {
       <TabView>
         <TabPanel header="Articulos">
           <div className='main-container'>
-            <Panel header='NUEVO GASTO' style={{ flex: '2' }}>
-                asdas
+            <Panel header={PanelHeader} style={{ flex: '2' }}>
+                <TableProducts products={data}></TableProducts>
             </Panel>
             <SidePanelProduct></SidePanelProduct>
           </div>

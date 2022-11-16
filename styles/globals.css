@@ -1,6 +1,7 @@
 :root {
   --red-color: rgb(199, 16, 16);
   --grey-color: rgb(192, 191, 191);
+  --white-color: rgb(255, 255, 255);
   --grey-dark-color: rgb(119, 119, 119);
 }
 html,
@@ -49,3 +50,80 @@ a {
 .main-container {
   display: flex;
 }
+.main-container :last-child{
+  margin-left: 2px;
+}
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+.form-container .field{
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+}
+.form-container .field :first-child{
+  margin-top: 10px;
+}
+.p-panel-header{
+  background: var(--red-color) !important;
+  color: var(--white-color) !important;
+}
+.main-panel-header{
+  display: flex;
+  justify-content: space-between;
+}
+.p-panel .p-panel-header .p-panel-title{
+  width: 100%;
+}
+.p-datatable-header{
+  padding: 3px !important
+}
+.p-inputtext {
+  height: 10px;
+}
+
+
+
+/*----------------------------------------*/
+/*DATATABLE*/
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 960px) {
+  .datatable-crud-demo .table-header {
+      align-items: flex-start;
+  }
+}
+.datatable-crud-demo .product-image {
+  width: 100px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.datatable-crud-demo .p-dialog .product-image {
+  width: 150px;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+.datatable-crud-demo .confirmation-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 960px) {
+  .datatable-crud-demo .p-toolbar {
+      flex-wrap: wrap;
+  }
+  .datatable-crud-demo .p-toolbar .p-button {
+      margin-bottom: 0.25rem;
+  }
+  .datatable-crud-demo .table-header {
+      flex-direction: column;
+  }
+  .datatable-crud-demo .table-header .p-input-icon-left, .datatable-crud-demo .table-header input {
+      width: 100%;
+  }
+}
+               

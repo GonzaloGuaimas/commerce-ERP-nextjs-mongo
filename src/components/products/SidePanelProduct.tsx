@@ -1,23 +1,64 @@
+import { InputText } from 'primereact/inputtext'
+import { InputNumber } from 'primereact/inputnumber'
 import { Panel } from 'primereact/panel'
 import { ScrollPanel } from 'primereact/scrollpanel'
 import React from 'react'
+import { Button } from 'primereact/button'
 
 export const SidePanelProduct = () => {
   return (
     <Panel header='NUEVO PRODUCTO' style={{ flex: '1' }}>
-        <ScrollPanel style={{ width: '100%', height: '200px' }}>
-            <div style={{ padding: '1em', lineHeight: '1.5' }}>
-                The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughters wedding. His beloved
-                son Michael has just come home from the war, but does not intend to become part of his fathes business. Through
-                Michas life the nature of the family business becomes clear. The business of the family is just like the head
-                of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands
-                against the good of the family.
-                The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughte wedding. His beloved
-                son Michael has just come home from the war, but does not intend to become part of his fathes business. Through Michael
-                life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind
-                and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the
-                family.
-        </div>
+        <ScrollPanel style={{ width: '100%', height: '60vh' }}>
+        <div className='form-container'>
+                <div className="field">
+                    <label htmlFor="code">Codigo Barras</label>
+                    <InputNumber id="code"/>
+                </div>
+                <div className='field'>
+                    <InputText id="name"/>
+                </div>
+                <div className="field">
+                    <label htmlFor="quantity">Descripción</label>
+                    <InputNumber id="quantity"/>
+                </div>
+                <div className='field'>
+                    <label htmlFor="price">Categoría</label>
+                    <InputNumber id="price" mode="currency" currency="USD" locale="en-US" />
+                </div>
+                <div className="field">
+                    <label htmlFor="quantity">Proveedor</label>
+                    <InputNumber id="quantity"/>
+                </div>
+                <div className='field'>
+                    <label htmlFor="price">Temporada</label>
+                    <InputNumber id="price" mode="currency" currency="USD" locale="en-US" />
+                </div>
+                <div className="field">
+                    <label htmlFor="quantity">Costo</label>
+                    <InputNumber id="quantity"/>
+                </div>
+                <div className='field'>
+                    <label htmlFor="price">Lista1</label>
+                    <InputNumber id="price" mode="currency" currency="USD" locale="en-US" />
+                </div>
+                <div className="field">
+                    <label htmlFor="quantity">Lista2</label>
+                    <InputNumber id="quantity"/>
+                </div>
+                <div className='field'>
+                    <label htmlFor="price">Lista3</label>
+                    <InputNumber id="price" mode="currency" currency="USD" locale="en-US" />
+                </div>
+                <div className="field">
+                    <label htmlFor="quantity">Lista4</label>
+                    <InputNumber id="quantity"/>
+                </div>
+                <div className='field'>
+                    <label htmlFor="price">Stock</label>
+                    <InputNumber id="price" mode="currency" currency="USD" locale="en-US" />
+                </div>
+                <Button type='submit' label="Guardar" className="p-button-success" />
+            </div>
         </ScrollPanel>
     </Panel>
   )
