@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react'
 import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import { InputText } from 'primereact/inputtext'
-import { Product } from '../../@types'
+import { Order } from '../../@types'
 
-export const TableProducts = ({ products }: { products: Product[] }) => {
+export const TableOrder = ({ orders }: { orders: Order[] }) => {
   const [globalFilter, setGlobalFilter] = useState(null)
   const dtRef = useRef(null)
   const [selectedProducts, setSelectedProducts] = useState(null)
@@ -19,15 +19,19 @@ export const TableProducts = ({ products }: { products: Product[] }) => {
   )
 
   return (
-    <DataTable ref={dtRef} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
+    <DataTable ref={dtRef} value={orders} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
         dataKey="id" paginator rows={5}
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} items"
         globalFilter={globalFilter} header={header} responsiveLayout="scroll">
         <Column selectionMode="multiple" headerStyle={{ width: 'auto' }} exportable={false}></Column>
-        <Column field="name" header="Nombre" style={{ width: 'auto' }}></Column>
-        <Column field="description" header="Descripción" style={{ width: 'auto' }}></Column>
-        <Column field="price" header="Precio" ></Column>
+        <Column field="date" header="Fecha" style={{ width: 'auto' }}></Column>
+        <Column field="status" header="Estado" style={{ width: 'auto' }}></Column>
+        <Column field="location" header="Punto" style={{ width: 'auto' }}></Column>
+        <Column field="employee" header="Vendedor" style={{ width: 'auto' }}></Column>
+        <Column field="customer" header="Customer" style={{ width: 'auto' }}></Column>
+        <Column field="payment_method" header="Medio Pago" style={{ width: 'auto' }}></Column>
+        <Column field="total" header="Total" style={{ width: 'auto' }}></Column>
     </DataTable>
 
   )

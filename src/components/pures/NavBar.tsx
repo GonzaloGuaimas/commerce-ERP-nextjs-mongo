@@ -8,7 +8,7 @@ export const NavBar = () => {
     return (
         <div>
             <Button className='p-button-danger p-button-text'><Image alt={''} src={'/item-sell.png'} width={35} height={35}></Image></Button>
-            <Button className='p-button-danger p-button-text'><Image alt={''} src={'/item-sales.png'} width={35} height={35}></Image></Button>
+            <Button className='p-button-danger p-button-text'><Image alt={''} src={'/item-orders.png'} width={35} height={35}></Image></Button>
             <Button className='p-button-danger p-button-text'><Image alt={''} src={'/item-clothes.png'} width={35} height={35}></Image></Button>
             <Button className='p-button-danger p-button-text'><Image alt={''} src={'/item-user.png'} width={35} height={35}></Image></Button>
         </div>

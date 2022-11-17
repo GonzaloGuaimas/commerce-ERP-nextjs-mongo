@@ -51,7 +51,7 @@ a {
   display: flex;
 }
 .main-container :last-child{
-  margin-left: 2px;
+  /* margin-left: 2px; */
 }
 .form-container{
   display: flex;
@@ -63,8 +63,27 @@ a {
   grid-template-columns: 30% 70%;
   align-items: center;
 }
-.form-container .field :first-child{
-  margin-top: 10px;
+.form-container .field-text{
+  margin-bottom: -10px;
+  display: grid;
+  grid-template-columns: 20% 70%;
+  align-items: center;
+}
+.form-container .item-product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  border-bottom: 1px solid var(--grey-dark-color);
+}
+.total-item h3{
+  text-align: end;
+}
+.p-accordion .p-accordion-content{
+  padding: 2px !important;
+}
+.form-container {
+  padding-top: 10px;
 }
 .p-panel-header{
   background: var(--red-color) !important;
@@ -82,6 +101,11 @@ a {
 }
 .p-inputtext {
   height: 10px;
+}
+/*accordion*/
+.p-accordion .p-accordion-tab .p-accordion-header .p-accordion-header-link{
+  background: var(--grey-dark-color) !important;
+  color: var(--white-color) !important;
 }
 
 

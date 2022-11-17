@@ -15,6 +15,7 @@ export const SidePanelProduct = () => {
                     <InputNumber id="code"/>
                 </div>
                 <div className='field'>
+                    <label htmlFor="code">Nombre</label>
                     <InputText id="name"/>
                 </div>
                 <div className="field">
