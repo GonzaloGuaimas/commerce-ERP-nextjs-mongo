@@ -51,3 +51,14 @@ export interface Payment {
   date: String
   ammount: number
 }
+
+/**
+ * ENUMS
+ */
+
+export enum PriceListEnum {
+  LISTA1 = 1,
+  LISTA2 = 2,
+  LISTA3 = 3,
+  LISTA4 = 4
+}

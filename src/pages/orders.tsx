@@ -2,10 +2,22 @@ import Head from 'next/head'
 import { Button } from 'primereact/button'
 import { Panel } from 'primereact/panel'
 import { TabPanel, TabView } from 'primereact/tabview'
+import { TableOrderDetail } from '../components/order/TableOrderDetail'
 import { SidePanelOrders } from '../components/orders/SidePanelOrder'
+import { SidePanelOrder } from '../components/order/SidePanelOrder'
 import { TableOrders } from '../components/orders/TableOrder'
 
 export default function Orders () {
+  const detail = [{
+    _id: 'asdasa',
+    code: 345435,
+    name: 'product name',
+    description: 'product description',
+    cost: 1,
+    price: 1,
+    size: 1,
+    color: 1
+  }]
   const data = [{
     _id: 'as12',
     code: 23,
@@ -105,6 +117,11 @@ export default function Orders () {
       <Button label="Nuevo Articulo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
     </div>
   )
+  const PanelHeaderOrder = (
+    <div className='main-panel-header'>
+      <span className='p-panel-title' style={{ flex: '1rem' }}>Nueva Venta</span>
+    </div>
+  )
   return (
     <div>
       <Head>
@@ -113,6 +130,14 @@ export default function Orders () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TabView>
+        <TabPanel header="Venta">
+          <div className='main-container'>
+            <Panel header={PanelHeaderOrder} style={{ flex: '2' }}>
+                <TableOrderDetail detail={detail}></TableOrderDetail>
+            </Panel>
+            <SidePanelOrder order={data[0]}></SidePanelOrder>
+          </div>
+        </TabPanel>
         <TabPanel header="Ventas">
           <div className='main-container'>
             <Panel header={PanelHeaderSales} style={{ flex: '2' }}>
@@ -122,9 +147,7 @@ export default function Orders () {
           </div>
         </TabPanel>
         <TabPanel header="Movimientos de Caja">
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.</p>
+          <p>asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         </TabPanel>
         <TabPanel header="Arqueos de Caja">
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati

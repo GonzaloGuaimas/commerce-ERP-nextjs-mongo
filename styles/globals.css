@@ -80,6 +80,9 @@ a {
 .total-item h3{
   text-align: end;
 }
+.total-item h1{
+  text-align: end;
+}
 .p-accordion .p-accordion-content{
   padding: 2px !important;
 }
@@ -100,7 +103,7 @@ a {
 .p-datatable-header{
   padding: 3px !important
 }
-.p-inputtext {
+.form-container .field .p-inputtext {
   height: 10px;
 }
 /*accordion*/
@@ -117,6 +120,19 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.table-subheader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  margin-right: 2rem;
+}
+.table-subheader .field-text{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
+  align-items: center;
 }
 @media screen and (max-width: 960px) {
   .datatable-crud-demo .table-header {
