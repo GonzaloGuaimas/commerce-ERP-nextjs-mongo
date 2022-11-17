@@ -15,6 +15,24 @@ export interface Product {
   color: string
 }
 
+export interface Payment {
+  _id: String
+  code: Number
+  createdAt: String
+  name: String
+  date: String
+  ammount: number
+}
+
+export interface Customer {
+  _id: String
+  code: Number
+  createdAt: String
+  name: String
+  surname: String
+  dni: Number
+  email: String
+}
 export interface OrderDetail {
   _id: String
   code: Number
@@ -41,15 +59,6 @@ export interface Order {
   customer: number
   detail: OrderDetail[]
   payments: Payment[]
-}
-
-export interface Payment {
-  _id: String
-  code: Number
-  createdAt: String
-  name: String
-  date: String
-  ammount: number
 }
 
 /**
