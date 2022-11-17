@@ -4,9 +4,9 @@ import { Accordion, AccordionTab } from 'primereact/accordion'
 import React from 'react'
 import { Order, OrderDetail, Payment } from '../../@types'
 import { FieldText } from '../pures/FieldText'
-import { DetailItem } from '../pures/order/DetailItem'
-import { PaymentItem } from '../pures/order/PaymentItem'
-export const SidePanelOrder = ({ order }: { order: Order }) => {
+import { DetailItem } from '../pures/orders/DetailItem'
+import { PaymentItem } from '../pures/orders/PaymentItem'
+export const SidePanelOrders = ({ order }: { order: Order }) => {
   return (
     <Panel header='VENTA' style={{ flex: '1' }}>
         <ScrollPanel style={{ width: '100%', height: '60vh' }}>

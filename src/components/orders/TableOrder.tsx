@@ -4,7 +4,7 @@ import { Column } from 'primereact/column'
 import { InputText } from 'primereact/inputtext'
 import { Order } from '../../@types'
 
-export const TableOrder = ({ orders }: { orders: Order[] }) => {
+export const TableOrders = ({ orders }: { orders: Order[] }) => {
   const [globalFilter, setGlobalFilter] = useState(null)
   const dtRef = useRef(null)
   const [selectedProducts, setSelectedProducts] = useState(null)

@@ -2,8 +2,8 @@ import Head from 'next/head'
 import { Button } from 'primereact/button'
 import { Panel } from 'primereact/panel'
 import { TabPanel, TabView } from 'primereact/tabview'
-import { SidePanelOrder } from '../components/order/SidePanelOrder'
-import { TableOrder } from '../components/order/TableOrder'
+import { SidePanelOrders } from '../components/orders/SidePanelOrder'
+import { TableOrders } from '../components/orders/TableOrder'
 
 export default function Orders () {
   const data = [{
@@ -116,9 +116,9 @@ export default function Orders () {
         <TabPanel header="Ventas">
           <div className='main-container'>
             <Panel header={PanelHeaderSales} style={{ flex: '2' }}>
-                <TableOrder orders={data}></TableOrder>
+                <TableOrders orders={data}></TableOrders>
             </Panel>
-            <SidePanelOrder order={data[0]}></SidePanelOrder>
+            <SidePanelOrders order={data[0]}></SidePanelOrders>
           </div>
         </TabPanel>
         <TabPanel header="Movimientos de Caja">
