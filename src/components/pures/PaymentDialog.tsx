@@ -8,11 +8,11 @@ export const PaymentDialog = ({ showDialog, setShowDialog }: { showDialog: boole
     <Dialog header="Agregar Pago" visible={showDialog} onHide={setShowDialog} breakpoints={{ '960px': '75vw' }} style={{ width: '30vw' }}>
         <div className='form-container'>
             <div className="field">
-                <label htmlFor="code">Forma Pago</label>
+                <label htmlFor="code">Medio de Pago</label>
                 <Dropdown options={['EFECTIVO', 'DEBITO', 'TRANSFERENCIA']}/>
             </div>
             <div className="field">
-                <label htmlFor="code">Importe</label>
+                <label htmlFor="code">Monto</label>
                 <InputNumber id="price" value={0} mode="currency" currency="USD" locale="en-US" />
             </div>
         </div>
