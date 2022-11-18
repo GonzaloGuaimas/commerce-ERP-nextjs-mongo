@@ -20,7 +20,7 @@ export const TableProducts = ({ products }: { products: Product[] }) => {
 
   return (
     <DataTable ref={dtRef} value={products} selection={selectedProducts} onSelectionChange={(e) => setSelectedProducts(e.value)}
-        dataKey="id" paginator rows={5}
+        dataKey="id" paginator rows={8} size="small"
         paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
         currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} items"
         globalFilter={globalFilter} header={header} responsiveLayout="scroll">
