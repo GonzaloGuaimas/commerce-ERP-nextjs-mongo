@@ -4,33 +4,46 @@ import { InputNumber } from 'primereact/inputnumber'
 import { InputText } from 'primereact/inputtext'
 import { Panel } from 'primereact/panel'
 import { ScrollPanel } from 'primereact/scrollpanel'
-import React from 'react'
+import React, { useState } from 'react'
 import { FlowType } from '../../@types'
+import { EmployeeDialogSelector } from '../pures/EmployeeDialogSelector'
+import { FieldDate } from '../pures/FieldDate'
+import { FieldSelection } from '../pures/FieldSelection'
+import { FieldTime } from '../pures/FieldTime'
 
 export const SidePanelCash = () => {
+  const [showEmployeeDialog, setShowEmployeeDialog] = useState(false)
   return (
-    <Panel header='NUEVO MOVIMIENTO' style={{ flex: '1' }}>
-        <ScrollPanel style={{ width: '100%', height: '60vh' }}>
-            <div className='form-container'>
-                <div className="field">
-                    <label htmlFor="payment_method">Medio de Pago</label>
-                    <Dropdown options={['EFECTIVO', 'DEBITO', 'TRANSFERENCIA']}/>
+    <>
+        <Panel header='NUEVO MOVIMIENTO' style={{ flex: '1' }}>
+            <ScrollPanel style={{ width: '100%', height: '60vh' }}>
+                <div className='form-container'>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <FieldDate selectedDate={undefined} setSelectedDate={undefined}></FieldDate>
+                        <FieldTime selectedTime={undefined} setSelectedTime={undefined}></FieldTime>
+                    </div>
+                    <FieldSelection title={'Empleado'} content={'-'} onClick={() => setShowEmployeeDialog(true)}></FieldSelection>
+                    <div className="field" style={{ marginTop: '3px' }}>
+                        <label htmlFor="payment_method">Medio de Pago</label>
+                        <Dropdown options={['EFECTIVO', 'DEBITO', 'TRANSFERENCIA']}/>
+                    </div>
+                    <div className="field">
+                        <label htmlFor="flow_type">Tipo</label>
+                        <Dropdown id='flow_type' options={[FlowType.EGRESO, FlowType.INGRESO]}/>
+                    </div>
+                    <div className="field">
+                        <label htmlFor="ammount">Monto</label>
+                        <InputNumber id="ammount" mode="currency" currency="USD" locale="en-US" />
+                    </div>
+                    <div className="field">
+                        <label htmlFor="comment">Comentario</label>
+                        <InputText id="comment"/>
+                    </div>
+                    <Button type='submit' label="Guardar" className="p-button-success" />
                 </div>
-                <div className="field">
-                    <label htmlFor="flow_type">Tipo</label>
-                    <Dropdown id='flow_type' options={[FlowType.EGRESO, FlowType.INGRESO]}/>
-                </div>
-                <div className="field">
-                    <label htmlFor="ammount">Monto</label>
-                    <InputNumber id="ammount" mode="currency" currency="USD" locale="en-US" />
-                </div>
-                <div className="field">
-                    <label htmlFor="comment">Comentario</label>
-                    <InputText id="comment"/>
-                </div>
-                <Button type='submit' label="Guardar" className="p-button-success" />
-            </div>
-        </ScrollPanel>
-    </Panel>
+            </ScrollPanel>
+        </Panel>
+        <EmployeeDialogSelector showDialog={showEmployeeDialog} customers={[]} setShowDialog={setShowEmployeeDialog}></EmployeeDialogSelector>
+    </>
   )
 }

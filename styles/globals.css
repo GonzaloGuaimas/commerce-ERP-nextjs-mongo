@@ -67,8 +67,20 @@ a {
 .form-container .field-text{
   margin-bottom: -10px;
   display: grid;
-  grid-template-columns: 20% 70%;
+  grid-template-columns: auto auto auto;
   align-items: center;
+}
+.form-container .field-text-2{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  column-gap: 1rem;
+}
+.form-container .field-text button{
+  justify-self: end;
+}
+.form-container .field-text h4{
+  justify-self: center;
 }
 .form-container .item-product{
   display: flex;
