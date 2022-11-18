@@ -71,3 +71,8 @@ export enum PriceListEnum {
   LISTA3 = 3,
   LISTA4 = 4
 }
+
+export enum FlowType {
+  EGRESO = 'EGRESO',
+  INGRESO = 'INGRESO'
+}

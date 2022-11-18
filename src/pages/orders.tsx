@@ -6,6 +6,7 @@ import { TableOrderDetail } from '../components/order/TableOrderDetail'
 import { SidePanelOrders } from '../components/orders/SidePanelOrder'
 import { SidePanelOrder } from '../components/order/SidePanelOrder'
 import { TableOrders } from '../components/orders/TableOrder'
+import { SidePanelCash } from '../components/cash_flow/SidePanelCash'
 
 export default function Orders () {
   const detail = [{
@@ -147,7 +148,12 @@ export default function Orders () {
           </div>
         </TabPanel>
         <TabPanel header="Movimientos de Caja">
-          <p>asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+          <div className='main-container'>
+            <Panel header={PanelHeaderSales} style={{ flex: '2' }}>
+                <TableOrders orders={data}></TableOrders>
+            </Panel>
+            <SidePanelCash></SidePanelCash>
+          </div>
         </TabPanel>
         <TabPanel header="Arqueos de Caja">
             <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
