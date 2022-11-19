@@ -76,6 +76,9 @@ a {
   align-items: center;
   column-gap: 1rem;
 }
+.p-calendar{
+  max-width: 70% !important;
+}
 .form-container .field-text button{
   justify-self: end;
 }

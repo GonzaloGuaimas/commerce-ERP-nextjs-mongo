@@ -33,6 +33,18 @@ export interface Customer {
   dni: Number
   email: String
 }
+
+export interface CashFlow {
+  _id: String
+  code: Number
+  date: String
+  flow_type: String
+  ammount: Number
+  payment_method: String
+  comment: String
+  employee: number
+  location: number
+}
 export interface OrderDetail {
   _id: String
   code: Number

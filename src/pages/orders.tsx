@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { Button } from 'primereact/button'
 import { Panel } from 'primereact/panel'
 import { TabPanel, TabView } from 'primereact/tabview'
 import { TableOrderDetail } from '../components/order/TableOrderDetail'
@@ -7,6 +6,7 @@ import { SidePanelOrders } from '../components/orders/SidePanelOrder'
 import { SidePanelOrder } from '../components/order/SidePanelOrder'
 import { TableOrders } from '../components/orders/TableOrder'
 import { SidePanelCash } from '../components/cash_flow/SidePanelCash'
+import { TableCashFlow } from '../components/cash_flow/TableCashFlow'
 
 export default function Orders () {
   const detail = [{
@@ -112,15 +112,19 @@ export default function Orders () {
     ]
   }
   ]
-  const PanelHeaderSales = (
-    <div className='main-panel-header'>
-      <span className='p-panel-title' style={{ flex: '1rem' }}>Ventas</span>
-      <Button label="Nuevo Articulo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
-    </div>
-  )
   const PanelHeaderOrder = (
     <div className='main-panel-header'>
       <span className='p-panel-title' style={{ flex: '1rem' }}>Nueva Venta</span>
+    </div>
+  )
+  const PanelHeaderOrders = (
+    <div className='main-panel-header'>
+      <span className='p-panel-title' style={{ flex: '1rem' }}>Ventas</span>
+    </div>
+  )
+  const PanelHeaderCashFlow = (
+    <div className='main-panel-header'>
+      <span className='p-panel-title' style={{ flex: '1rem' }}>Movimiento de Caja</span>
     </div>
   )
   return (
@@ -141,7 +145,7 @@ export default function Orders () {
         </TabPanel>
         <TabPanel header="Ventas">
           <div className='main-container'>
-            <Panel header={PanelHeaderSales} style={{ flex: '2' }}>
+            <Panel header={PanelHeaderOrders} style={{ flex: '2' }}>
                 <TableOrders orders={data}></TableOrders>
             </Panel>
             <SidePanelOrders order={data[0]}></SidePanelOrders>
@@ -149,8 +153,8 @@ export default function Orders () {
         </TabPanel>
         <TabPanel header="Movimientos de Caja">
           <div className='main-container'>
-            <Panel header={PanelHeaderSales} style={{ flex: '2' }}>
-                <TableOrders orders={data}></TableOrders>
+            <Panel header={PanelHeaderCashFlow} style={{ flex: '2' }}>
+                <TableCashFlow cashFlow={[]}></TableCashFlow>
             </Panel>
             <SidePanelCash></SidePanelCash>
           </div>
