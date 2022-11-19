@@ -45,6 +45,26 @@ export interface CashFlow {
   employee: number
   location: number
 }
+
+export interface CashBalance {
+  _id: String
+  code: Number
+  date_open: String
+  date_close: String
+  status: number
+  s_cash_init: number /* VER */
+  s_cash: number
+  s_debit: number
+  s_credit: number
+  s_transfer: number
+  u_cash: number
+  u_debit: number
+  u_credit: number
+  u_transfer: number
+  comment: String
+  employee: number
+  location: number
+}
 export interface OrderDetail {
   _id: String
   code: Number

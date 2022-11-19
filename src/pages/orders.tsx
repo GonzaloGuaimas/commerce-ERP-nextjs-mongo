@@ -8,6 +8,8 @@ import { TableOrders } from '../components/orders/TableOrder'
 import { SidePanelCash } from '../components/cash_flow/SidePanelCash'
 import { SidePanelCashBalance } from '../components/cash_balance/SidePanelCashBalance'
 import { TableCashFlow } from '../components/cash_flow/TableCashFlow'
+import { TableCashBalance } from '../components/cash_balance/TableCashBalance'
+import { Button } from 'primereact/button'
 
 export default function Orders () {
   const detail = [{
@@ -128,6 +130,12 @@ export default function Orders () {
       <span className='p-panel-title' style={{ flex: '1rem' }}>Movimiento de Caja</span>
     </div>
   )
+  const PanelHeaderCashBalance = (
+    <div className='main-panel-header'>
+      <span className='p-panel-title' style={{ flex: '1rem' }}>Arqueo de Caja</span>
+      <Button label="Nuevo Arqueo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
+    </div>
+  )
   return (
     <div>
       <Head>
@@ -162,8 +170,8 @@ export default function Orders () {
         </TabPanel>
         <TabPanel header="Arqueos de Caja">
           <div className='main-container'>
-            <Panel header={PanelHeaderCashFlow} style={{ flex: '2' }}>
-                <TableCashFlow cashFlow={[]}></TableCashFlow>
+            <Panel header={PanelHeaderCashBalance} style={{ flex: '2' }}>
+                <TableCashBalance cashBalance={[]}></TableCashBalance>
             </Panel>
             <SidePanelCashBalance></SidePanelCashBalance>
           </div>

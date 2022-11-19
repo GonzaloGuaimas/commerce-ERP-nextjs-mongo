@@ -18,12 +18,12 @@ export const SidePanelCashBalance = () => {
   const [showEmployeeDialog, setShowEmployeeDialog] = useState(false)
   return (
     <>
-        <Panel header='Arqueo de Caja' style={{ flex: '1' }}>
+        <Panel header='ARQUEO DE CAJA' style={{ flex: '1' }}>
             <ScrollPanel style={{ width: '100%', height: '60vh' }}>
                 <div className='form-container'>
-                    <FieldText title={'Fecha'} content={'12/06/2022'}></FieldText>
-                    <FieldText title={'Sucursal'} content={'Numero 1'}></FieldText>
-                    <FieldText title={'Estado'} content={'Pendiente'}></FieldText>
+                    <FieldText title={'Creado por'} content={'Gonzalo X'}></FieldText>
+                    <FieldText title={'Sucursal'} content={'Santiago'}></FieldText>
+                    <FieldText title={'Estado'} content={'Abierto'}></FieldText>
                 </div>
                 <Accordion>
                     <AccordionTab header="Sistema">
@@ -52,23 +52,23 @@ export const SidePanelCashBalance = () => {
                         <div className='form-container'>
                             <div className="field">
                                 <label htmlFor="cash">Efectivo</label>
-                                <InputNumber id="cash"/>
+                                <InputNumber id="cash" mode="currency" currency="USD" locale="en-US"/>
                             </div>
                             <div className="field">
                                 <label htmlFor="debit">Débito</label>
-                                <InputNumber id="debit"/>
+                                <InputNumber id="debit" mode="currency" currency="USD" locale="en-US"/>
                             </div>
                             <div className="field">
                                 <label htmlFor="credit">Crédito</label>
-                                <InputNumber id="credit"/>
+                                <InputNumber id="credit" mode="currency" currency="USD" locale="en-US"/>
                             </div>
                             <div className="field">
                                 <label htmlFor="transfer">Transferencia</label>
-                                <InputNumber id="transfer"/>
+                                <InputNumber id="transfer" mode="currency" currency="USD" locale="en-US"/>
                             </div>
                             <div className="field">
                                 <label htmlFor="comment">Comentario</label>
-                                <InputNumber id="comment"/>
+                                <InputText id="comment"/>
                             </div>
                         </div>
                     </AccordionTab>
