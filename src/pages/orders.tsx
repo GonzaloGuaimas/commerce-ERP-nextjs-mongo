@@ -6,6 +6,7 @@ import { SidePanelOrders } from '../components/orders/SidePanelOrder'
 import { SidePanelOrder } from '../components/order/SidePanelOrder'
 import { TableOrders } from '../components/orders/TableOrder'
 import { SidePanelCash } from '../components/cash_flow/SidePanelCash'
+import { SidePanelCashBalance } from '../components/cash_balance/SidePanelCashBalance'
 import { TableCashFlow } from '../components/cash_flow/TableCashFlow'
 
 export default function Orders () {
@@ -160,9 +161,12 @@ export default function Orders () {
           </div>
         </TabPanel>
         <TabPanel header="Arqueos de Caja">
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
+          <div className='main-container'>
+            <Panel header={PanelHeaderCashFlow} style={{ flex: '2' }}>
+                <TableCashFlow cashFlow={[]}></TableCashFlow>
+            </Panel>
+            <SidePanelCashBalance></SidePanelCashBalance>
+          </div>
         </TabPanel>
     </TabView>
     </div>

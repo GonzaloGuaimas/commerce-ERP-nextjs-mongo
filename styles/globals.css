@@ -66,8 +66,10 @@ a {
 }
 .form-container .field-text{
   margin-bottom: -10px;
-  display: grid;
-  grid-template-columns: auto auto auto;
+  /* display: grid; */
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: auto auto auto; */
   align-items: center;
 }
 .form-container .field-text-2{
@@ -90,6 +92,12 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 3rem;
+  border-bottom: 1px solid var(--grey-dark-color);
+}
+.simple-label-between{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
   border-bottom: 1px solid var(--grey-dark-color);
 }
 .total-item h3{
