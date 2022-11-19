@@ -23,7 +23,6 @@ export const TableCashFlow = ({ cashFlow }: { cashFlow: CashFlow[] }) => {
         <div className='table-subheader'>
           <h5 className="mx-0 my-1">Filtros</h5>
           <Calendar selectionMode="multiple" value={selectedDate} onChange={(e) => setSelectedDate(e.value)} showIcon></Calendar>
-          <Dropdown value={schedule[0]} options={schedule} onChange={(e) => console.log('asd')} placeholder="Turno"/>
           <Dropdown value={schedule[0]} options={['EFECTIVO', 'DEBITO', 'TRANSFERENCIA']} placeholder="Metodo Pago"/>
           <FieldSelection title={'Cliente'} content={'-'} onClick={() => setShowCustomerDialog(true)}></FieldSelection>
          </div>
