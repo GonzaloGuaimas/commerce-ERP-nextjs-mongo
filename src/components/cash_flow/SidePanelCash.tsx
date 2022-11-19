@@ -6,6 +6,7 @@ import { Panel } from 'primereact/panel'
 import { ScrollPanel } from 'primereact/scrollpanel'
 import React, { useState } from 'react'
 import { FlowType } from '../../@types'
+import { ConfirmationDialog } from '../pures/ConfirmationDialog'
 import { EmployeeDialogSelector } from '../pures/EmployeeDialogSelector'
 import { FieldDate } from '../pures/FieldDate'
 import { FieldSelection } from '../pures/FieldSelection'
@@ -15,6 +16,7 @@ import { ToastMessage } from '../pures/ToastMessage'
 export const SidePanelCash = () => {
   const [showEmployeeDialog, setShowEmployeeDialog] = useState(false)
   const [activeToast, setActiveToast] = useState(false)
+  const [confirmDialog, setConfirmDialog] = useState(false)
 
   function activarToast () {
     setActiveToast(true)
@@ -49,11 +51,12 @@ export const SidePanelCash = () => {
                         <label htmlFor="comment">Comentario</label>
                         <InputText id="comment"/>
                     </div>
-                    <Button type='submit' label="Guardar" className="p-button-success" onClick={() => activarToast()}/>
+                    <Button type='submit' label="Guardar" className="p-button-success" onClick={() => setConfirmDialog(true)}/>
                 </div>
             </ScrollPanel>
         </Panel>
         <EmployeeDialogSelector showDialog={showEmployeeDialog} customers={[]} setShowDialog={setShowEmployeeDialog}></EmployeeDialogSelector>
+        <ConfirmationDialog visible={confirmDialog} hide={setConfirmDialog} message={'Está seguro de Guardar?'} title={'Confirmación'} accept={() => activarToast()} reject={undefined}></ConfirmationDialog>
         {activeToast ? <ToastMessage title={'Realizado'} subTitle={'Movimiento Guardado'} type={'success'}></ToastMessage> : null}
     </>
   )
