@@ -10,9 +10,19 @@ import { EmployeeDialogSelector } from '../pures/EmployeeDialogSelector'
 import { FieldDate } from '../pures/FieldDate'
 import { FieldSelection } from '../pures/FieldSelection'
 import { FieldTime } from '../pures/FieldTime'
+import { ToastMessage } from '../pures/ToastMessage'
 
 export const SidePanelCash = () => {
   const [showEmployeeDialog, setShowEmployeeDialog] = useState(false)
+  const [activeToast, setActiveToast] = useState(false)
+
+  function activarToast () {
+    setActiveToast(true)
+    console.log('entratoas')
+    setTimeout(() => {
+      setActiveToast(false)
+    }, 4000)
+  }
   return (
     <>
         <Panel header='NUEVO MOVIMIENTO' style={{ flex: '1' }}>
@@ -39,11 +49,12 @@ export const SidePanelCash = () => {
                         <label htmlFor="comment">Comentario</label>
                         <InputText id="comment"/>
                     </div>
-                    <Button type='submit' label="Guardar" className="p-button-success" />
+                    <Button type='submit' label="Guardar" className="p-button-success" onClick={() => activarToast()}/>
                 </div>
             </ScrollPanel>
         </Panel>
         <EmployeeDialogSelector showDialog={showEmployeeDialog} customers={[]} setShowDialog={setShowEmployeeDialog}></EmployeeDialogSelector>
+        {activeToast ? <ToastMessage title={'Realizado'} subTitle={'Movimiento Guardado'} type={'success'}></ToastMessage> : null}
     </>
   )
 }
