@@ -45,7 +45,7 @@ export default function Products () {
   }
   ]
   const PanelHeader = (
-    <div className='main-panel-header'>
+    <div className='main-panel-header-buttons'>
       <span className='p-panel-title' style={{ flex: '1rem' }}>Articulos</span>
       <ButtonAdd title={'Nuevo Artículo'} onClick={undefined}></ButtonAdd>
     </div>

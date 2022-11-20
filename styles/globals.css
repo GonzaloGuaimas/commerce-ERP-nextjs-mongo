@@ -116,7 +116,7 @@ a {
   background: var(--red-color) !important;
   color: var(--white-color) !important;
 }
-.main-panel-header{
+.main-panel-header-buttons{
   display: flex;
   justify-content: space-between;
   margin-top: -1rem;
@@ -124,12 +124,10 @@ a {
   margin-right: -1rem;
   align-items: center;
 }
-.p-button.p-button-danger.p-button-outlined{
-  background: white !important;
-  height: 100% !important;
-}
-.p-button.p-button-danger.p-button-outlined-active{
-  background: rgb(105, 8, 8) !important;
+.main-panel-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /*---------------------------------*/
 .button-add {

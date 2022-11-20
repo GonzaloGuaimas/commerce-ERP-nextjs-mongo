@@ -132,7 +132,7 @@ export default function Orders () {
     </div>
   )
   const PanelHeaderCashBalance = (
-    <div className='main-panel-header'>
+    <div className='main-panel-header-buttons'>
       <span className='p-panel-title' style={{ flex: '1rem' }}>Arqueo de Caja</span>
       <ButtonAdd title={'Nuevo Arqueo'} onClick={undefined}></ButtonAdd>
     </div>
