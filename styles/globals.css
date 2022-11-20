@@ -119,7 +119,36 @@ a {
 .main-panel-header{
   display: flex;
   justify-content: space-between;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-right: -1rem;
+  align-items: center;
 }
+.p-button.p-button-danger.p-button-outlined{
+  background: white !important;
+  height: 100% !important;
+}
+.p-button.p-button-danger.p-button-outlined-active{
+  background: rgb(105, 8, 8) !important;
+}
+/*---------------------------------*/
+.button-add {
+  background: white !important;
+  height: 100% !important;
+  border-radius: 0px !important;
+  border-top: 1px solid var(--red-color) !important;
+  border-bottom: 1px solid var(--red-color) !important;
+  color: var(--red-color) !important;
+  transition: all 0.5s;
+}
+.button-add:hover {
+  background: rgb(202, 202, 202)!important;
+  color: white !important;
+  transition: 0.2s;
+}
+
+
+/*---------------------------------*/
 .p-panel .p-panel-header .p-panel-title{
   width: 100%;
 }

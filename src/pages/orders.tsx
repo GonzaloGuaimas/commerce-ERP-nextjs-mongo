@@ -10,6 +10,7 @@ import { SidePanelCashBalance } from '../components/cash_balance/SidePanelCashBa
 import { TableCashFlow } from '../components/cash_flow/TableCashFlow'
 import { TableCashBalance } from '../components/cash_balance/TableCashBalance'
 import { Button } from 'primereact/button'
+import { ButtonAdd } from '../components/pures/ButtonAdd'
 
 export default function Orders () {
   const detail = [{
@@ -133,7 +134,7 @@ export default function Orders () {
   const PanelHeaderCashBalance = (
     <div className='main-panel-header'>
       <span className='p-panel-title' style={{ flex: '1rem' }}>Arqueo de Caja</span>
-      <Button label="Nuevo Arqueo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
+      <ButtonAdd title={'Nuevo Arqueo'} onClick={undefined}></ButtonAdd>
     </div>
   )
   return (

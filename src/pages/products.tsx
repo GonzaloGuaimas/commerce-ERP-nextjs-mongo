@@ -4,6 +4,7 @@ import { Panel } from 'primereact/panel'
 import { TabPanel, TabView } from 'primereact/tabview'
 import { SidePanelProduct } from '../components/products/SidePanelProduct'
 import { TableProducts } from '../components/products/TableProducts'
+import { ButtonAdd } from '../components/pures/ButtonAdd'
 
 export default function Products () {
   const data = [{
@@ -46,7 +47,7 @@ export default function Products () {
   const PanelHeader = (
     <div className='main-panel-header'>
       <span className='p-panel-title' style={{ flex: '1rem' }}>Articulos</span>
-      <Button label="Nuevo Articulo" icon={'pi pi-plus'} className="p-button-raised p-button-success" style={{ height: '10px', flex: '0.2' }}/>
+      <ButtonAdd title={'Nuevo Artículo'} onClick={undefined}></ButtonAdd>
     </div>
   )
   return (
