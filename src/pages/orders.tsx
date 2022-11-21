@@ -138,7 +138,7 @@ export default function Orders () {
     </div>
   )
   return (
-    <div>
+    <div style={{ height: '80vh' }}>
       <Head>
         <title>SISTEMA - Ventas</title>
         <meta name="sistema" content="created by Omega" />
